@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Natal</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=width-device, initial-scale=1.0">
+	<style>
+		body{
+			text-align: center;
+		}
+		button { 
+			background-color: #228b22; 
+                	color: #ffffff; 
+    			border: none;
+    			border-radius: 5px;
+    			padding: 10px 20px;
+    			font-size: 16px;
+    			cursor: pointer;
+    			transition: 0.3s ease-in-out;
+		}
+
+		button:hover {
+    			background-color: #006400;
+		}
+		input {
+    			padding: 10px;
+    			font-size: 16px;
+    			border: 2px solid #228b22;
+    			border-radius: 5px;
+		}
+
+		h1 {
+    			color: #ffdf00; 
+    			font-size: 2.5em;
+    			text-shadow: 2px 2px #8b0000;
+		}
+		body {
+    			background: linear-gradient(to bottom, #b22222, #8b0000);
+    			color: #fff;
+		}
+	</style>
+	</head>
+	<body>
+		<h1>Espere!</h1>
+		<h2>Antes de apertar o botão, escreva qualquer número abaixo:</h2><br><br>
+		<input type="number" placeholder="Seu número" id="01"><br><br>
+		<button onclick="arvore()">Feliz natal</button>
+	</body>
+	<script>
+		function arvore(){
+			const INPUT = parseFloat(document.getElementById('01').value);
+			let i = 0;
+			if(isNaN(INPUT) || INPUT <=0){
+				alert("Considere reavaliar a sua resposta, ou você colocou um número negativo ou deixou vazio.");
+				location.reload();
+			}else{
+				while(i<INPUT){
+					document.body.style.background = 'linear-gradient(to bottom, #b22222, #8b0000)';
+					document.body.style.color = '#32cd32';
+					document.body.style.textAlign = 'center';
+					i++;
+					document.write(("*").repeat(i));
+					document.write("<br>");
+				}
+			 document.write("|||");
+			 document.write(("<br>").repeat(2));
+			 document.write("Tente novamente. Coloque um número maior!");
+			}
+		}
+	</script>
+</html>
